@@ -1,0 +1,38 @@
+{
+  "name": "wcag_constrast_auditor",
+  "description": "An auditor that takes a page or url and verifies that the color contrast between foreground and background with wcag.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/msecret/wcag_constrast_auditor",
+  "author": {
+    "name": "Marco Secreto",
+    "email": "msegreto@miceover.com",
+    "url": "http://miceover.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/msecret/wcag_constrast_auditor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/msecret/wcag_constrast_auditor/issues"
+  },
+  "licenses": [
+    {
+      "type": "Unlicense",
+      "url": "https://github.com/msecret/wcag_constrast_auditor/blob/master/LICENSE-Unlicense"
+    }
+  ],
+  "main": "index",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.5"
+  },
+  "keywords": []
+}
