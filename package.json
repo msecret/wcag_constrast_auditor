@@ -17,8 +17,8 @@
   },
   "licenses": [
     {
-      "type": "Unlicense",
-      "url": "https://github.com/msecret/wcag_constrast_auditor/blob/master/LICENSE-Unlicense"
+      "type": "Public Domain",
+      "url": "https://github.com/msecret/wcag_constrast_auditor/blob/master/LICENSE"
     }
   ],
   "main": "index",
@@ -29,10 +29,14 @@
     "test": "grunt test"
   },
   "devDependencies": {
+    "grunt": "~0.4.5",
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt": "~0.4.5"
+    "jquery": "^2.1.3"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "wcag-contrast-verifier": "^1.1.0"
+  }
 }
