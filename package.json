@@ -37,6 +37,7 @@
   },
   "keywords": [],
   "dependencies": {
+    "phantomjs": "^1.9.13",
     "wcag-contrast-verifier": "^1.1.0"
   }
 }
