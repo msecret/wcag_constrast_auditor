@@ -4,15 +4,25 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    env: {
+      test: {
+        concat: {
+          PATH : {
+            'value': 'node_modules/.bin',
+            'delimiter': ':'
+          }
+        }
+      }
+    },
     nodeunit: {
-      files: ['test/**/*_test.js'],
+      files: ['test/*_test.js'],
     },
     jshint: {
       options: {
         jshintrc: '.jshintrc'
       },
       lib: {
-        src: ['lib/*.js']
+        src: ['lib/*.js', '!lib/page_build.js']
       },
       test: {
         src: ['test/*.js']
@@ -28,8 +38,8 @@ module.exports = function(grunt) {
              debug: true
           }
         },
-        src: ['lib/page/*.js'],
-        dest: 'lib/page/build.js'
+        src: ['lib/page/build.js'],
+        dest: 'lib/page_build.js'
       }
     }
   });
