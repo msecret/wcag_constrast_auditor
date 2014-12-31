@@ -11,30 +11,27 @@ module.exports = function(grunt) {
       options: {
         jshintrc: '.jshintrc'
       },
-      gruntfile: {
-        src: 'Gruntfile.js'
-      },
       lib: {
-        src: ['lib/**/*.js']
+        src: ['lib/*.js']
       },
       test: {
-        src: ['test/**/*.js']
+        src: ['test/*.js']
       },
     },
     watch: {
-      gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
-      },
-      lib: {
-        files: '<%= jshint.lib.src %>',
-        tasks: ['jshint:lib', 'nodeunit']
-      },
-      test: {
-        files: '<%= jshint.test.src %>',
-        tasks: ['jshint:test', 'nodeunit']
-      },
     },
+    browserify: {
+      page: {
+        options: {
+          exclude: 'lib/page/build.js',
+          browserifyOptions: {
+             debug: true
+          }
+        },
+        src: ['lib/page/*.js'],
+        dest: 'lib/page/build.js'
+      }
+    }
   });
 
   // These plugins provide necessary tasks.
@@ -42,8 +39,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  // Default task.
-  grunt.registerTask('default', ['jshint', 'test']);
-  grunt.registerTask('test', ['nodeunit']);
+  grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-testling');
 
+  grunt.registerTask('test', ['jshint', 'testling', 'build', 'nodeunit']);
+  grunt.registerTask('build', ['jshint', 'browserify']);
+  // Default task.
+  grunt.registerTask('default', ['jshint', 'test', 'build']);
 };
