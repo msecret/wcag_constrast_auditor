@@ -22,15 +22,3 @@ var wcag_constrast_auditor = require('../lib/wcag_constrast_auditor.js');
     test.ifError(value)
 */
 
-exports['awesome'] = {
-  setUp: function(done) {
-    // setup here
-    done();
-  },
-  'no args': function(test) {
-    test.expect(1);
-    // tests here
-    test.equal(wcag_constrast_auditor.awesome(), 'awesome', 'should be awesome.');
-    test.done();
-  },
-};
